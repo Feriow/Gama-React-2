@@ -1,11 +1,9 @@
 import React from "react";
+import "./style/global.scss";
+import Routes from "./routes";
 
 const App: React.FC = () => {
-  return (
-    <div>
-      <h1>React Part 2</h1>
-    </div>
-  );
+  return <Routes />;
 };
 
 export default App;
