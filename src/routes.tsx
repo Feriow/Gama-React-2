@@ -3,14 +3,20 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import RickAndMorty from "./view/RickAndMorty";
 import Home from "./view/home";
+import Form from "./view/Form";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
+      <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/rickandmorty" component={RickAndMorty} />
+        <Route path="/form" component={Form} />
+        <Route path="/rm" component={RickAndMorty} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 };
