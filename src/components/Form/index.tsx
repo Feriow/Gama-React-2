@@ -8,6 +8,7 @@ const Form: React.FC = () => {
   const dispatch = useDispatch();
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    localStorage.setItem("@name", JSON.stringify(data));
     dispatch(addNewPerson(data));
   };
 

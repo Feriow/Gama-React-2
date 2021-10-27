@@ -7,6 +7,7 @@ const Nav: React.FC = () => {
       <Link to="/">Home</Link>
       <Link to="/rm">Rick and Morty</Link>
       <Link to="/form">Form</Link>
+      <Link to="/todo">Todo</Link>
     </div>
   );
 };
