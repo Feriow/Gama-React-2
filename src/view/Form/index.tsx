@@ -6,7 +6,7 @@ import { IPeople } from "../../store/modules/types";
 const FormView: React.FC = () => {
   const state = useSelector((state: IPeople) => state.people);
   return (
-    <div>
+    <div className="container">
       <Form />
       <br />
       <hr />

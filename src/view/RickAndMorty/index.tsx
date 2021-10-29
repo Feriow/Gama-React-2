@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Lottie from "lottie-react";
+import AnimationMorty from "../../assets/animation/morty-dance-loader.json";
 import api from "../../service/api";
 
 interface IResults {
@@ -42,26 +44,43 @@ const RickAndMorty: React.FC = () => {
       })
       .catch((e) => console.log(e))
       .finally(() => {
-        setIsLoad(false);
+        setTimeout(() => {
+          setIsLoad(false);
+        }, 1000);
       });
   }, [pages]);
 
+  if (isLoad) {
+    return (
+      <div className="container loader">
+        <Lottie
+          animationData={AnimationMorty}
+          style={{ width: 400, height: 400 }}
+        ></Lottie>
+      </div>
+    );
+  }
+
   return (
-    <div>
-      {valorQualquer}
-      <button onClick={handleClearStorage}>Limpar localStorage</button>
+    <div className="container">
+      {/* {valorQualquer}
+      <button onClick={handleClearStorage}>Limpar localStorage</button> */}
 
-      <h1>Rick and Morty YAAAL!!</h1>
+      <h1 className="center">Rick and Morty YAAAL!!</h1>
 
-      {data.map((item) => (
-        <div key={item.id}>
-          <img src={item.image} alt={item.name} />
-          <p>{item.name}</p>
-          <a href={item.url}>Clique aqui para ver mais</a>
-        </div>
-      ))}
+      <div className="content">
+        {data.map((item) => (
+          <a href={item.url}>
+            <div key={item.id} className="card">
+              <img src={item.image} alt={item.name} />
+              <p>{item.name}</p>
+              <p>Click to find out more</p>
+            </div>
+          </a>
+        ))}
+      </div>
 
-      <div>
+      <div className="center navRM">
         <button onClick={() => setPages(1)} disabled={pages <= 1}>
           First
         </button>
