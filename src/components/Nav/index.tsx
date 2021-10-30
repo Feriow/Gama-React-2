@@ -18,6 +18,9 @@ const Nav: React.FC = () => {
         <Link to="/rm">Rick and Morty</Link>
         <Link to="/form">Form</Link>
         <Link to="/todo">Todo</Link>
+        <Link to="/signup">Sign Up</Link>
+        <Link to="/signin">Sign In</Link>
+        <Link to="/dash">Dashboard</Link>
       </div>
     </motion.nav>
   );

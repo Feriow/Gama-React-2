@@ -18,3 +18,11 @@ export interface IContextModel {
   state: ICountTodos;
   dispatch: React.Dispatch<ICounterAction>;
 }
+
+export interface ISignUp {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export type ISignIn = Omit<ISignUp, "name">;
